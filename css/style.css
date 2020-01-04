@@ -1,0 +1,231 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: url(../img/office-bg.jpg) no-repeat;
+  background-size: cover;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  overflow: auto;
+}
+
+textarea:focus,
+input:focus,
+select {
+  outline: none;
+}
+
+.succes-banner {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 34vh);
+  padding: 15px;
+  background-color: limegreen;
+  color: white;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+}
+
+@keyframes showSuccesBanner {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.showSuccesBanner {
+  animation: showSuccesBanner 2s forwards;
+}
+
+.form,
+.check-info,
+.thanks {
+  width: 100%;
+  margin: 20px auto;
+  box-shadow: 0 0 5px #ccc;
+  padding: 20px;
+  max-width: 450px;
+  background: white;
+}
+
+.form__field {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.form__field i {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  opacity: 0;
+  color: #4caf50;
+}
+
+.form__title {
+  text-align: center;
+  font-weight: 700;
+  margin: 0 auto 20px;
+  font-size: 1.2em;
+  color: gray;
+}
+
+.form__label {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: -10px;
+  display: none;
+  white-space: nowrap;
+  font-size: 14px;
+  color: red;
+}
+
+.form__input {
+  margin-bottom: 5px;
+  height: 45px;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  transition: 400ms;
+}
+
+.valid,
+.valid:not(:focus) {
+  border-color: #4caf50;
+}
+
+.form-field_submit,
+.check-info__btn-wrap {
+  margin-top: 26px;
+  text-align: center;
+}
+
+#formSpecalization,
+.check-info,
+.thanks {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+  text-align: center;
+  color: #0b85c3;
+}
+
+select {
+  margin-bottom: 15px;
+  border: 1px solid lightgray;
+  padding: 10px 5px 10px;
+  width: 100%;
+  background-position: 98% center;
+  color: gray;
+}
+
+select:last-child {
+  margin-bottom: 0;
+}
+
+.departments.error,
+.vacancy.error {
+  margin-bottom: 5px;
+}
+
+.form__submit,
+.check-info__btn {
+  background: #0b85c3;
+  color: #fff;
+  width: 35%;
+  border: none;
+  padding: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.5s;
+}
+
+.form__submit:hover,
+.check-info__btn:hover {
+  background: #09699a;
+}
+
+.check-info__title {
+  font-size: 1.2em;
+  color: gray;
+}
+
+.check-info__info {
+  text-align: left;
+}
+
+.check-info__caption {
+  color: #636363;
+}
+
+.check-info__value {
+  color: gray;
+}
+
+.check-info__mark {
+  text-align: left;
+  color: gray;
+}
+
+@keyframes animateAppear {
+  0% {
+    transform: translate(0, 120%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0%);
+    opacity: 1;
+  }
+}
+
+.animateAppear {
+  animation: animateAppear 0.5s ease forwards;
+  position: relative ;
+  pointer-events: auto !important;
+  overflow: hidden;
+}
+
+@keyframes animateDisappear {
+  0% {
+    transform: translate(0, 0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, -120%);
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.animateDisappear {
+  animation: animateDisappear 0.5s ease forwards;
+  overflow: hidden;
+}
+
+.check-info__value {
+  font-weight: normal;
+}
+
+.selectric-open .selectric-items {
+  height: 200%;
+}
