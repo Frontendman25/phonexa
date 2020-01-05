@@ -10,8 +10,9 @@ $(function() {
   var thanks = document.querySelector('.thanks')
   var dataFromForms = {}
   $('.departments').selectric()
-  $('.vacancy').selectric() // Animate disappeareance block
-
+  $('.vacancy').selectric() 
+  
+  // Animate disappeareance block
   var toggleAppeareance = function toggleAppeareance(element, appeareance) {
     if (appeareance === 'disappear') {
       wrapper.style.overflow = 'hidden'
@@ -32,8 +33,9 @@ $(function() {
       }, 1000)
       return
     }
-  } // Validate formRegistration
-
+  } 
+  
+  // Validate formRegistration
   $.validator.addMethod(
     'regex',
     function(value, element, param) {
@@ -81,8 +83,9 @@ $(function() {
         'Required at least one number (0-9), uppercase and lowercase letters (a-Z), and at least one special character (!@#$%^&*~)',
       password_confirmation: 'Must be equal to password'
     }
-  }) // Work whith <select></select>
-
+  })
+  
+  // Work whith <select></select>
   var departments = document.querySelector('.departments')
   var vacancy = document.querySelector('.vacancy')
   var isGetData = false
@@ -116,8 +119,9 @@ $(function() {
         '</span>\n      </h3>\n      <h3 class="check-info__caption">Job Title: <span class="check-info__value">'
       )
       .concat(vacancy, '</span>\n      </h3>\n    ')
-  } // departments.addEventListener('click', function(e) {
-
+  } 
+  
+  // departments.addEventListener('click', function(e) {
   $('.departments').on('selectric-before-open', function(e) {
     if (!isGetData) {
       $('#departmentsError, #vacancyError').css({ display: 'none' })
@@ -168,13 +172,15 @@ $(function() {
     $('.vacancy')
       .change()
       .selectric('refresh')
-  }) // Edit button click
-
+  }) 
+  
+  // Edit button click
   editBtn.addEventListener('click', function(e) {
     toggleAppeareance(checkInfo, 'disappear')
     toggleAppeareance(formRegistration, 'appear')
-  }) // Send button click
-
+  }) 
+  
+  // Send button click
   sendBtn.addEventListener('click', function(e) {
     localStorage.setItem('infoFromForms', JSON.stringify(dataFromForms))
     toggleAppeareance(checkInfo, 'disappear')
@@ -182,8 +188,9 @@ $(function() {
     formRegistration.reset()
     formSpecalization.querySelector('.form__field_select').innerHTML =
       '\n      <select class="departments" name="departments">\n        <option selected disabled>Departments</option>\n      </select>\n      <select class="vacancy" name="vacancy" disabled>\n        <option selected disabled>Vacancy</option>\n      </select>\n    '
-  }) // Validate formSpecalization
-
+  }) 
+  
+  // Validate formSpecalization
   $('#formSpecalization').validate({
     submitHandler: function submitHandler(form, e) {
       e.preventDefault()
@@ -207,6 +214,7 @@ $(function() {
     }
   })
 
+  // formSpecalizationBtn click
   $('.formSpecalizationBtn').on('click', function(e) {
     if (!$('#formSpecalization').valid()) {
       e.preventDefault()
