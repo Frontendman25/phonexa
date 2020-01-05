@@ -142,11 +142,6 @@ select:last-child {
   margin-bottom: 0;
 }
 
-.departments.error,
-.vacancy.error {
-  margin-bottom: 5px;
-}
-
 .form__submit,
 .check-info__btn {
   background: #0b85c3;
@@ -200,7 +195,7 @@ select:last-child {
 
 .animateAppear {
   animation: animateAppear 0.5s ease forwards;
-  position: relative ;
+  position: relative;
   pointer-events: auto !important;
   overflow: hidden;
 }
@@ -228,4 +223,22 @@ select:last-child {
 
 .selectric-open .selectric-items {
   height: 200%;
+}
+
+.form__field_select {
+  display: flex;
+  flex-direction: column;
+}
+
+#departmentsError,
+#vacancyError {
+  display: none;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: red;
+  text-align: left;
+}
+
+#departmentsError {
+  margin-top: -10px;
 }
