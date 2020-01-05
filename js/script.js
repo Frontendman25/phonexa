@@ -165,6 +165,9 @@ $(function() {
       options += '<option>'.concat(el, '</option>')
     })
     vacancy.innerHTML = options
+    $('.vacancy')
+      .change()
+      .selectric('refresh')
   }) // Edit button click
 
   editBtn.addEventListener('click', function(e) {
